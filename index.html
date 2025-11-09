@@ -17,7 +17,49 @@
                     colors: {
                         'primary-green': '#38a169', // Ciemna, kojąca zieleń
                         'secondary-pink': '#f687b3', // Delikatny róż/róża
-                        'background-light': '#f7fafc', // Jasne tło
+                        'background-light': '#f7fafc', // Jasne tło<!-- SEKCJA FAQ (Najczęściej Zadawane Pytania) -->
+<section class="py-16 md:py-24 bg-background-light" id="faq">
+    <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 text-center mb-12">Najczęściej Zadawane Pytania</h2>
+
+        <div class="space-y-4">
+
+            <!-- Pytanie 1: Efektywność czasu -->
+            <div x-data="{ open: false }" class="border border-gray-300 rounded-xl shadow-md overflow-hidden">
+                <button @click="open = !open" class="flex justify-between items-center w-full py-5 px-6 text-left font-semibold text-gray-800 focus:outline-none bg-white hover:bg-gray-50 transition duration-150">
+                    <span>1. Czy 10 minut jogi wystarczy, żeby zobaczyć efekty?</span>
+                    <svg :class="{'rotate-180': open, 'rotate-0': !open}" class="w-5 h-5 transition-transform duration-300 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div x-show="open" x-collapse.duration.500ms class="pt-0 pb-6 px-6 text-gray-600 bg-white">
+                    <p>Oczywiście. Badania pokazują, że regularne krótkie sesje są bardziej efektywne dla budowania nawyku niż jednorazowe, długie sesje. 10 minut codziennie to klucz do redukcji stresu, poprawy snu i zwiększenia energii, co jest potwierdzone przez praktykujące mamy.</p>
+                </div>
+            </div>
+
+            <!-- Pytanie 2: Poziom zaawansowania -->
+            <div x-data="{ open: false }" class="border border-gray-300 rounded-xl shadow-md overflow-hidden">
+                <button @click="open = !open" class="flex justify-between items-center w-full py-5 px-6 text-left font-semibold text-gray-800 focus:outline-none bg-white hover:bg-gray-50 transition duration-150">
+                    <span>2. Czy ten e-book jest dla początkujących?</span>
+                    <svg :class="{'rotate-180': open, 'rotate-0': !open}" class="w-5 h-5 transition-transform duration-300 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div x-show="open" x-collapse.duration.500ms class="pt-0 pb-6 px-6 text-gray-600 bg-white">
+                    <p>Tak! E-book jest zaprojektowany od podstaw z myślą o mamach, które dopiero zaczynają swoją przygodę z jogą. Każda sekwencja zawiera proste instrukcje i modyfikacje, abyś mogła bezpiecznie ćwiczyć w domu.</p>
+                </div>
+            </div>
+
+            <!-- Pytanie 3: Dostępność e-booka -->
+            <div x-data="{ open: false }" class="border border-gray-300 rounded-xl shadow-md overflow-hidden">
+                <button @click="open = !open" class="flex justify-between items-center w-full py-5 px-6 text-left font-semibold text-gray-800 focus:outline-none bg-white hover:bg-gray-50 transition duration-150">
+                    <span>3. Jak otrzymam e-book po zakupie?</span>
+                    <svg :class="{'rotate-180': open, 'rotate-0': !open}" class="w-5 h-5 transition-transform duration-300 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div x-show="open" x-collapse.duration.500ms class="pt-0 pb-6 px-6 text-gray-600 bg-white">
+                    <p>Natychmiast po zaksięgowaniu płatności, otrzymasz e-mail z linkiem do pobrania pliku w formacie PDF. Możesz go przeglądać na dowolnym urządzeniu: telefonie, tablecie, czy laptopie.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>Dodanie sekcji FAQ
                     }
                 }
             }
