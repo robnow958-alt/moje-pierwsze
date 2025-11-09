@@ -1,10 +1,261 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
-    <title>Wdrożono - Prosta Strona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joga dla Zabieganej Mamy - 10 Minut Dziennie</title>
+    <!-- Ładowanie Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfiguracja czcionki Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-green': '#38a169', // Ciemna, kojąca zieleń
+                        'secondary-pink': '#f687b3', // Delikatny róż/róża
+                        'background-light': '#f7fafc', // Jasne tło
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Dodatkowy styl dla lepszej estetyki i płynnego przewijania */
+        .header-bg {
+            background-image: linear-gradient(180deg, rgba(247, 250, 252, 0) 0%, #f7fafc 100%), url('https://placehold.co/1200x600/b8e994/ffffff?text=Wizualizacja+Jogi');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+        }
+    </style>
 </head>
-<body>
-    <h1>STRONA DZIAŁA! Wdrożono przez Netlify!</h1>
+<body class="font-sans bg-background-light text-gray-800 antialiased">
+
+    <!-- SEKACJA NAWIGACJI (GÓRNY PASEK) -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <a href="#top" class="text-xl font-extrabold text-primary-green hover:text-green-700 transition">Joga dla Mamy</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#mity" class="text-gray-600 hover:text-primary-green transition font-medium py-1">Mity</a>
+                <a href="#cialo" class="text-gray-600 hover:text-primary-green transition font-medium py-1">Dla Ciała</a>
+                <a href="#umysl" class="text-gray-600 hover:text-primary-green transition font-medium py-1">Dla Umysłu</a>
+                <a href="#przedsmak" class="text-white bg-secondary-pink px-4 py-1 rounded-full hover:bg-pink-500 transition font-bold shadow-md">PRZEDSMAK E-BOOKA</a>
+            </div>
+            <!-- Mobile Menu Button (Placeholder) -->
+            <button id="mobileMenuButton" class="md:hidden text-gray-600 p-2 rounded-md hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SEKACJA GŁÓWNA - HERO SECTION -->
+    <header id="top" class="header-bg pt-16 pb-8 md:py-24 text-center">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                Joga dla Zabieganej Mamy
+            </h1>
+            <p class="text-xl md:text-2xl text-primary-green font-semibold mb-8">
+                10 Minut Dziennie dla Spokoju, Siły i Dobrego Samopoczucia
+            </p>
+
+            <!-- Wizualizacja Ebooka (Placeholder) -->
+            <div class="mx-auto w-64 h-80 bg-secondary-pink rounded-xl shadow-2xl transform hover:scale-105 transition duration-300 flex items-center justify-center p-6">
+                <span class="text-white text-3xl font-bold">Okładka E-booka</span>
+            </div>
+
+            <!-- Przycisk CTA - Ukryty na początku, aktywowany po przewinięciu -->
+            <button id="ctaButton" class="mt-12 bg-primary-green hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 opacity-0 transform translate-y-5" style="display:none;" disabled>
+                Pobierz Wstęp Już Dziś!
+            </button>
+        </div>
+    </header>
+
+    <!-- SEKACJA WSTĘPNA -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-primary-green mb-10">WSTĘP: Dlaczego zasługujesz na tę chwilę?</h2>
+
+            <article class="space-y-6 text-lg text-gray-600">
+                <h3 class="text-2xl font-semibold text-gray-900">Dlaczego właśnie Ty, zajęta mamo, zasługujesz na chwilę dla siebie?</h3>
+                <p>Czy pamiętasz ostatni dzień, w którym zrobiłaś coś wyłącznie dla siebie? Nie chodzi o szybki prysznic, gdy dziecko ogląda bajkę, ani o wypicie kawy na stojąco między praniem a gotowaniem. Chodzi o prawdziwą chwilę, w której zatrzymałaś się, odetchnęłaś i poczułaś, że jesteś czymś więcej niż mamą, żoną, pracownicą czy osobą zarządzającą domem.</p>
+                <p class="font-bold text-gray-700">Jeśli ta chwila jest tak odległa, że ledwo ją pamiętasz – ten e-book jest dla Ciebie.</p>
+                <p>Macierzyństwo to najpiękniejsza i najtrudniejsza praca na świecie. Jesteś potrzebna 24 godziny na dobę, siedem dni w tygodniu. Nie możesz nalewać z pustego dzbanka. Nie możesz dawać innym, gdy sama jesteś wyczerpana.</p>
+                <p class="text-xl font-bold text-center mt-8 text-primary-green">Witaj w miejscu, gdzie Twoje potrzeby są ważne. Witaj w praktyce jogi stworzonej z myślą o Tobie.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- SEKACJA MITY O CZASIE -->
+    <section id="mity" class="py-16 md:py-20 bg-background-light">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center text-secondary-pink mb-4">Mit: „Nie mam czasu na jogę”</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">Jak 10 minut może zmienić Twój dzień</p>
+
+            <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-secondary-pink">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Prawda o czasie, który tracisz</h3>
+                <p class="text-lg text-gray-600 mb-6">„Nie mam czasu” – to najczęstsze zdanie, które słyszę. Twój dzień jest podzielony na tysiąc małych zadań. Ale odpowiedz sobie szczerze: ile czasu dzisiaj spędziłaś na przeglądaniu Instagrama? Tu jest Twoje 10 minut.</p>
+
+                <ul class="list-none space-y-2 text-gray-700 p-4 border-l-2 border-primary-green">
+                    <li><strong class="text-gray-900">6:00-8:00:</strong> Poranna rutyna i przygotowania.</li>
+                    <li><strong class="text-gray-900">8:00-16:00:</strong> Praca i zarządzanie domem.</li>
+                    <li><strong class="text-gray-900">16:00-22:00:</strong> Obowiązki popołudniowe i wieczorne.</li>
+                </ul>
+                <p class="text-lg text-gray-600 mt-6 font-bold">Tu nie chodzi o znalezienie czasu. Chodzi o jego świadome wykorzystanie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKACJA DLA CIAŁA -->
+    <section id="cialo" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+             <h2 class="text-3xl font-bold text-center text-primary-green mb-4">Korzyści: Dla Ciała</h2>
+             <p class="text-xl text-center text-gray-600 mb-12">10 minut, które naprawi Twoje plecy i doda energii.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Lewa Kolumna: Korzyści -->
+                <div class="bg-primary-green bg-opacity-10 p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-primary-green mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Twoje Ciało Ci Podziękuje
+                    </h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2 text-lg">
+                        <li>**Zmniejszenie bólu pleców i karku** (ponad 90% mam ma problemy z kręgosłupem).</li>
+                        <li>Rozluźnienie napiętych mięśni po noszeniu dziecka.</li>
+                        <li>Poprawa postawy i elastyczności.</li>
+                        <li>Lepszy sen i szybsza regeneracja.</li>
+                        <li>Więcej energii (tak – nawet bez dodatkowej kawy!).</li>
+                    </ul>
+                </div>
+                <!-- Prawa Kolumna: Badania -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-primary-green">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        Oparte na Nauce
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-4">Badania naukowe potwierdzają:</p>
+                    <ul class="list-none text-gray-700 space-y-2 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-primary-green font-bold text-2xl mr-2">&bull;</span> Regularne, krótkie sesje jogi są **bardziej efektywne** niż rzadkie, długie treningi.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary-green font-bold text-2xl mr-2">&bull;</span> Joga jest bezpiecznym i skutecznym sposobem na **poprawę mobilności** po ciąży i porodzie.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKACJA DLA UMYSŁU -->
+    <section id="umysl" class="py-16 md:py-20 bg-background-light">
+        <div class="container mx-auto px-4 max-w-4xl">
+             <h2 class="text-3xl font-bold text-center text-secondary-pink mb-4">Korzyści: Dla Umysłu i Ducha</h2>
+             <p class="text-xl text-center text-gray-600 mb-12">Odzyskaj spokój i kontrolę nad emocjami.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Lewa Kolumna: Korzyści -->
+                <div class="bg-secondary-pink bg-opacity-10 p-6 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-secondary-pink mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 4.016A12.001 12.001 0 002.944 12c.045 1.09.243 2.155.578 3.167h.001a11.972 11.972 0 008.2 5.867 11.972 11.972 0 008.2-5.867h.001c.335-1.012.533-2.077.578-3.167a12.001 12.001 0 00-3.674-7.056z" />
+                        </svg>
+                        Spokój w 10 Minut
+                    </h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2 text-lg">
+                        <li>Redukcja poziomu **kortyzolu** – hormonu stresu.</li>
+                        <li>Spokojniejsze reakcje na trudne sytuacje.</li>
+                        <li>Lepsza koncentracja i pamięć.</li>
+                        <li>Poczucie spełnienia z dbania o siebie.</li>
+                        <li>Wzór dla dzieci: mama szanująca swoje potrzeby.</li>
+                    </ul>
+                </div>
+                <!-- Prawa Kolumna: Badania -->
+                <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-secondary-pink">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-secondary-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v2m0 0l-1.428-1.428A3.003 3.003 0 016 12a3.003 3.003 0 013-3m5 3a3.003 3.003 0 01-6 0h.01" />
+                        </svg>
+                        Wsparcie dla Mamy
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-4">Dodatkowe dowody:</p>
+                    <ul class="list-none text-gray-700 space-y-2 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-secondary-pink font-bold text-2xl mr-2">&bull;</span> Mamy praktykujące jogę wykazują niższy poziom **wypalenia rodzicielskiego**.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-secondary-pink font-bold text-2xl mr-2">&bull;</span> 10 minut codziennej praktyki zmniejsza objawy **depresji poporodowej** o 30%.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKACJA PRZEDSMAK I WEZWANIE DO DZIAŁANIA -->
+    <section id="przedsmak" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                To był tylko przedsmak pełnej wersji!
+            </h2>
+            <p class="text-xl text-gray-600 mb-10">
+                W e-booku znajdziesz nie tylko filozofię i motywację, ale także **gotowe, 10-minutowe sekwencje** jogi stworzone specjalnie na poranek, wieczór oraz na momenty kryzysu. Przestań czekać na idealny moment – on nigdy nie nadejdzie.
+            </p>
+
+            <button class="bg-secondary-pink hover:bg-pink-600 text-white font-extrabold py-5 px-12 rounded-full shadow-2xl text-2xl transform hover:scale-105 transition duration-300">
+                Zacznij Dziś i Kup E-book!
+            </button>
+            <p class="mt-4 text-gray-500 text-sm">Natychmiastowy dostęp do wszystkich 10-minutowych sesji.</p>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Joga dla Zabieganej Mamy. <a href="#" class="hover:text-primary-green transition">Regulamin i Polityka Prywatności.</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Logika aktywacji przycisku CTA w sekcji HERO po przewinięciu
+        const ctaButton = document.getElementById('ctaButton');
+        const ctaButtonText = "Kup E-book i Zacznij Dziś!";
+
+        function checkScroll() {
+            // Aktywuj przycisk, gdy użytkownik przewinie 300px
+            if (window.scrollY > 300) {
+                if (ctaButton.style.display === 'none') {
+                    ctaButton.style.display = 'inline-block';
+                    setTimeout(() => {
+                        ctaButton.classList.remove('opacity-0', 'translate-y-5');
+                        ctaButton.textContent = ctaButtonText;
+                        ctaButton.removeAttribute('disabled');
+                    }, 50);
+                }
+            }
+        }
+
+        window.addEventListener('scroll', checkScroll);
+
+        // Dodanie obsługi kliknięcia do wszystkich głównych przycisków CTA
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Kup E-book') || button.textContent.includes('Pobierz Wstęp')) {
+                button.addEventListener('click', () => {
+                    // W normalnej aplikacji: redirect do strony płatności/koszyka
+                    // Zgodnie z wcześniejszą rozmową, musisz zadbać o regulaminy i OMNIBUS przy faktycznej sprzedaży!
+                    alert('Witaj! Tutaj byłby link do koszyka lub strony płatności. Projekt jest gotowy do wdrożenia na Netlify!');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
